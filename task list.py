@@ -360,6 +360,14 @@ def get_index_of_item(item, item_list):
             return index
     return None
 
+# Funzione per gestire l'effetto di hover rosso quando il mouse entra nel Label
+def on_enter(event):
+    event.widget.config(fg="#FF0000")  # Imposta il colore del testo su rosso
+
+# Funzione per gestire il ripristino del colore quando il mouse esce dal Label
+def on_leave(event):
+    event.widget.config(fg="#000000")  # Ripristina il colore del testo a nero
+
 # ------------------------------------------open disclaimer
 
 def open_disclaimer():
@@ -368,24 +376,32 @@ def open_disclaimer():
     disclaimer_window.geometry("450x300+550+220")
     disclaimer_window.resizable(False, False)
     disclaimer_window.configure(background="#bfbfbf")
+    disclaimer_window.grid_columnconfigure(0, weight=1)
+    disclaimer_window.grid_rowconfigure(0, weight=1)
 
-    disclaimer_text = scrolledtext.ScrolledText(disclaimer_window, wrap=tk.WORD, width=50, height=15, fg="#000000", bg="#d9d9d9")
-    disclaimer_text.grid(row=0, column=0, padx=10, pady=10, sticky="NSEW")
+    frame = tk.Frame(disclaimer_window, bg="#bfbfbf")
+    frame.grid(row=0, column=0, padx=10, pady=10, sticky="NSEW")
 
-    disclaimer_text.insert(tk.END, "Il mondo è di tutti e ogni individuo è libero. \n"
-                                    "Ognuno deve avere il diritto di informarsi liberamente con coscienza e intelligenza.\n"
-                                    "Siate sempre umili e siate sempre aperti con la mente e continuate a sognare...sempre\n"
-                                    "---------------------------------------------\n"
-                                    "contatti:\n"
-                                    "email: accybertech@outlook.it\n\n"
-                                    "sito:\n"
-                                    "www.accybertech.it\n")
+    disclaimer_text = """
+    Il mondo è di tutti e ogni individuo è libero.
+    Ognuno deve avere il diritto di informarsi liberamente con
+    coscienza e intelligenza.
+    Siate sempre umili e siate sempre aperti con la mente
+    e continuate a sognare...sempre
+    ---------------------------------------------
+    contatti:
+    email: accybertech@outlook.it
+    sito:
+    www.accybertech.it
+    """
+
+    label = tk.Label(frame, text=disclaimer_text, bg="#bfbfbf", justify="left", wraplength=450, padx=10, pady=10)
+    label.pack(fill="both", expand=True)
+
 
     manifesto_link = tk.Label(disclaimer_window, text="leggi il nostro manifesto", font=("Helvetica", 12, "bold"), bg="#bfbfbf", cursor="hand2")
     manifesto_link.grid(row=1, column=0, padx=40, pady=(0, 5), sticky="S")
     manifesto_link.bind("<Button-1>", lambda event: open_manifesto())
-
-    disclaimer_text.config(state=tk.DISABLED)
 
 # Funzione per aprire l'email
 def open_email():
@@ -403,7 +419,10 @@ def open_site():
     webbrowser.open("https://www.accybertech.it")
 
 def open_manifesto():
-    webbrowser.open("https://www.accybertech.it/manifesto/")
+    webbrowser.open("https://www.accybertech.it/manifesto")
+
+def open_condizioni():
+    webbrowser.open("https://www.accybertech.it/task-list-app")
 
 # layout grafico dell'applicazione finestra principale
 window = tk.Tk()
@@ -474,6 +493,28 @@ disclaimer_link.bind("<Button-1>", lambda event: open_disclaimer())
 email_link = tk.Label(window, text="Email", fg="#000000", cursor="hand2", bg="#bfbfbf", font=("Helvetica", 10))
 email_link.grid(row=13, column=0, padx=(437, 10),pady=(0, 12), sticky="WS")
 email_link.bind("<Button-1>", lambda event: open_email())
+
+# Crea un Label come collegamento ipertestuale per le conizioni d'uso
+condizioni_link = tk.Label(window, text="Condizioni d'uso", fg="#000000", cursor="hand2", bg="#bfbfbf", font=("Helvetica", 10))
+condizioni_link.grid(row=13, column=0, padx=(476, 10),pady=(0, 12), sticky="WS")
+condizioni_link.bind("<Button-1>", lambda event: open_condizioni())
+
+# Associa le funzioni agli eventi di ingresso (entrata) e uscita (uscita) del mouse
+disclaimer_link.bind("<Enter>", on_enter)
+disclaimer_link.bind("<Leave>", on_leave)
+disclaimer_link.bind("<Button-1>", lambda event: open_disclaimer())
+
+# Associa le funzioni agli eventi di ingresso (entrata) e uscita (uscita) del mouse
+email_link.bind("<Enter>", on_enter)
+email_link.bind("<Leave>", on_leave)
+email_link.bind("<Button-1>", lambda event: open_email())
+
+# Associa le funzioni agli eventi di ingresso (entrata) e uscita (uscita) del mouse
+condizioni_link.bind("<Enter>", on_enter)
+condizioni_link.bind("<Leave>", on_leave)
+condizioni_link.bind("<Button-1>", lambda event: open_condizioni())
+
+
 
 load_tasks()
 load_deleted_items()
