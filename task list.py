@@ -390,7 +390,7 @@ def open_disclaimer():
     e continuate a sognare...sempre
     ---------------------------------------------
     contatti:
-    email: accybertech@outlook.it
+    email: accybertech@outlook.it\n
     sito:
     www.accybertech.it
     """
