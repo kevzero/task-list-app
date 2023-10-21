@@ -431,7 +431,6 @@ window.title("task list")
 window.resizable(False, False)
 window.configure(background="#bfbfbf")
 window.grid_columnconfigure(0, weight=1)
-window.iconbitmap("C:/Users/lenovo t450ge/Desktop/task_list_app/task_list_app/unnamed-_1_.ico") #icona in alto a sinistra app
 
 welcome_label = tk.Label(window, text="enter text to add to the list:", font=("Helvetica", 15), bg="#bfbfbf")
 welcome_label.grid(row=0, column=0, sticky="N", padx=20, pady=(10, 1))
