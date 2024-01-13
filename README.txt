@@ -6,7 +6,7 @@
         \/         \/      \/ \/          \/      \/                    \/     \/      \/ \/           
 
                                              #######################################################
-                                             #Grazie per aver scaricato questa mia applicazione. ;)#
+                                             #                     thank you ;)                    #
                                              #######################################################
 
 Ti potrà essere utile per prendere appunti dove vuoi in qualunque momento, è portabile ossia non serve installazione appunto per poterla usare in ogni dove e senza per forza installare qualcosa cui non interessa su un pc magari non tuo e quindi non serve installare le tue cose...
