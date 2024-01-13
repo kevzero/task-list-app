@@ -488,7 +488,7 @@ email_link = tk.Label(window, text="Email", fg="#000000", cursor="hand2", bg="#b
 email_link.grid(row=13, column=0, padx=(437, 10),pady=(0, 12), sticky="WS")
 email_link.bind("<Button-1>", lambda event: open_email())
 
-condizioni_link = tk.Label(window, text="Condizioni d'uso", fg="#000000", cursor="hand2", bg="#bfbfbf", font=("Helvetica", 10))
+condizioni_link = tk.Label(window, text="conditions", fg="#000000", cursor="hand2", bg="#bfbfbf", font=("Helvetica", 10))
 condizioni_link.grid(row=13, column=0, padx=(476, 10),pady=(0, 12), sticky="WS")
 condizioni_link.bind("<Button-1>", lambda event: open_condizioni())
 
