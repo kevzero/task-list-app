@@ -384,16 +384,22 @@ def open_disclaimer():
     Siate sempre umili e siate sempre aperti con la mente
     e continuate a sognare...sempre
     ---------------------------------------------
-    contatti:
+    The world belongs to everyone and every individual is free.
+    Everyone must have the right to freely inform themselves with
+    consciousness and intelligence.
+    Always be humble and always be open minded
+    and keep dreaming...always
+
+    contacts:
     email: accybertech@outlook.it\n
-    sito:
+    my site:
     www.accybertech.it
     """
 
     label = tk.Label(frame, text=disclaimer_text, bg="#bfbfbf", justify="left", wraplength=450, padx=10, pady=10)
     label.pack(fill="both", expand=True)
 
-    manifesto_link = tk.Label(disclaimer_window, text="leggi il nostro manifesto", font=("Helvetica", 12, "bold"), bg="#bfbfbf", cursor="hand2")
+    manifesto_link = tk.Label(disclaimer_window, text="read our manifesto", font=("Helvetica", 12, "bold"), bg="#bfbfbf", cursor="hand2")
     manifesto_link.grid(row=1, column=0, padx=40, pady=(0, 5), sticky="S")
     manifesto_link.bind("<Button-1>", lambda event: open_manifesto())
 
