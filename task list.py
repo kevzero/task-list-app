@@ -18,7 +18,7 @@ DELETED_BG_COLOR = '#ff9999'
 COMPLETED_BG_COLOR = "#9fff80"
 
 def set_icon(root):
-    icon_path = r"task_list_app_icon.ico"
+    icon_path = r"images\task_list_app_icon_2.ico"
     root.iconbitmap(icon_path)
 
 def add_task():
