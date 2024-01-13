@@ -367,7 +367,7 @@ def on_leave(event):
 def open_disclaimer():
     disclaimer_window = tk.Toplevel(window)
     disclaimer_window.title("Disclaimer")
-    disclaimer_window.geometry("450x300+550+220")
+    disclaimer_window.geometry("450x310+550+220")
     disclaimer_window.resizable(False, False)
     disclaimer_window.configure(background="#bfbfbf")
     disclaimer_window.grid_columnconfigure(0, weight=1)
